@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163a31">
+  <title>เข้าสู่ระบบ · อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="account.css">
+  <script src="app.js" defer></script>
+  <script src="login.js" defer></script>
+</head>
+<body class="account-page">
+  <div class="topbar"><div class="shell topbar-inner"><span>แหล่งเรียนรู้ธรรมชาติ สิ่งแวดล้อม และพลังงาน</span><span>ค่ายพระรามหก · ชะอำ · เพชรบุรี</span></div></div>
+  <header class="shell header account-header"><a class="brand" href="index.html"><span class="brand-mark">✳</span><span><strong>อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</strong><small>SIRINDHORN INTERNATIONAL ENVIRONMENTAL PARK</small></span></a><a class="account-back" href="index.html">กลับหน้าเว็บไซต์ <span>↗</span></a></header>
+  <div class="offline-notice shell" id="offline-notice" hidden><div><strong>หน้านี้เปิดจากไฟล์พรีวิว</strong><span>ระบบสมัครและเข้าสู่ระบบต้องเปิดผ่านเซิร์ฟเวอร์</span></div><a href="http://localhost:3000/login.html?next=booking.html">เปิดหน้าเข้าสู่ระบบที่ใช้งานได้ <b>→</b></a></div>
+  <main class="account-main shell">
+    <section class="account-intro"><span class="eyebrow">MEMBER ACCESS</span><h1>เริ่มต้นวางแผน<br><em>วันเรียนรู้ของคุณ</em></h1><p>สมัครสมาชิกเพื่อจองคิวเข้าชมอุทยาน และตรวจสอบรายการจองได้ในที่เดียว</p><div class="account-points"><span><i>01</i> สมัครด้วยข้อมูลพื้นฐาน</span><span><i>02</i> เลือกวันและจำนวนผู้เข้าชม</span><span><i>03</i> รับหมายเลขคิวทันที</span></div></section>
+    <section class="auth-card" aria-label="ระบบสมาชิก">
+      <div class="auth-tabs" role="tablist"><button class="auth-tab is-active" type="button" data-auth-tab="login" role="tab" aria-selected="true">เข้าสู่ระบบ</button><button class="auth-tab" type="button" data-auth-tab="register" role="tab" aria-selected="false">สมัครสมาชิก</button></div>
+      <form class="auth-form" id="login-form" data-auth-panel="login">
+        <span class="eyebrow">WELCOME BACK</span><h2>ยินดีต้อนรับกลับ</h2><p class="form-intro">เข้าสู่ระบบเพื่อจัดการการจองของคุณ</p>
+        <label>อีเมล<input name="email" type="email" autocomplete="email" required placeholder="name@example.com"></label>
+        <label>รหัสผ่าน<input name="password" type="password" autocomplete="current-password" required minlength="8" placeholder="อย่างน้อย 8 ตัวอักษร"></label>
+        <div class="form-message" aria-live="polite"></div><button class="button button-dark auth-submit" type="submit">เข้าสู่ระบบ <span>→</span></button>
+      </form>
+      <form class="auth-form" id="register-form" data-auth-panel="register" hidden>
+        <span class="eyebrow">CREATE ACCOUNT</span><h2>สมัครสมาชิก</h2><p class="form-intro">ใช้ข้อมูลพื้นฐานเพื่อทำรายการจองคิว</p>
+        <label>ชื่อ-นามสกุล<input name="name" type="text" autocomplete="name" required maxlength="100" placeholder="ชื่อสำหรับใช้จองคิว"></label>
+        <label>อีเมล<input name="email" type="email" autocomplete="email" required maxlength="180" placeholder="name@example.com"></label>
+        <label>เบอร์โทรศัพท์ <span class="optional">ไม่บังคับ</span><input name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="08x-xxx-xxxx"></label>
+        <label>ตั้งรหัสผ่าน<input name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="100" placeholder="อย่างน้อย 8 ตัวอักษร"></label>
+        <div class="form-message" aria-live="polite"></div><button class="button button-dark auth-submit" type="submit">สร้างบัญชี <span>→</span></button>
+      </form>
+      <aside class="demo-credentials" hidden><span class="demo-icon">✳</span><div><strong>บัญชีผู้ดูแลสำหรับสาธิต</strong><small>อีเมล <b id="demo-email"></b> · รหัสผ่าน <b id="demo-password"></b></small></div></aside>
+      <p class="account-footnote">ต้นแบบสำหรับนำเสนอ · ข้อมูลสมาชิกเก็บไว้ในฐานข้อมูลของโปรเจกต์นี้</p>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark">✳</span><span><strong>อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</strong><small>SIRINDHORN INTERNATIONAL ENVIRONMENTAL PARK</small></span></a><span>© <span id="year"></span> · ธรรมชาติ สิ่งแวดล้อม และพลังงาน</span></div></footer>
+</body>
+</html>

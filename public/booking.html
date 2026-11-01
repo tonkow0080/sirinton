@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#163a31">
+  <meta name="description" content="จองคิวเข้าชมอุทยานสิ่งแวดล้อมนานาชาติสิรินธร">
+  <title>จองคิวเข้าอุทยาน · อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</title>
+  <link rel="stylesheet" href="site.css"><link rel="stylesheet" href="account.css">
+  <script src="app.js" defer></script><script src="booking.js" defer></script>
+</head>
+<body class="account-page">
+  <div class="topbar"><div class="shell topbar-inner"><span>วางแผนมาเยือน · อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</span><span>ค่ายพระรามหก · ชะอำ · เพชรบุรี</span></div></div>
+  <header class="shell header account-header"><a class="brand" href="index.html"><span class="brand-mark">✳</span><span><strong>อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</strong><small>SIRINDHORN INTERNATIONAL ENVIRONMENTAL PARK</small></span></a><div class="account-header-actions"><a class="account-back" href="index.html">กลับหน้าเว็บไซต์ <span>↗</span></a><a class="account-back" href="account.html">บัญชีของฉัน <span>→</span></a></div></header>
+  <main class="shell booking-main">
+    <div class="booking-heading"><div><span class="eyebrow">VISIT RESERVATION</span><h1>จองคิวเข้าอุทยาน</h1><p>เลือกวันเข้าชมและจำนวนผู้เข้าชม ระบบจะออกหมายเลขคิวให้หลังยืนยันการจอง</p></div><div class="capacity-card"><span>จำนวนผู้เข้าชมต่อวัน</span><strong><b id="capacity-remaining">100</b> <small>คน</small></strong><span id="capacity-date">ตรวจสอบตามวันที่เลือก</span></div></div>
+    <div class="booking-layout" id="booking-content" hidden>
+      <section class="booking-form-card"><div class="booking-step"><span>01</span><div><strong>รายละเอียดการเข้าชม</strong><small>กรอกข้อมูลการเดินทางของคุณ</small></div></div>
+        <form id="booking-form" class="booking-form">
+          <label>วันที่ต้องการเข้าชม<input name="visitDate" type="date" required></label>
+          <label>จำนวนผู้เข้าชม<select name="people" required><option value="1">1 คน</option><option value="2">2 คน</option><option value="3">3 คน</option><option value="4">4 คน</option><option value="5">5 คน</option><option value="6">6 คน</option><option value="7">7 คน</option><option value="8">8 คน</option><option value="9">9 คน</option><option value="10">10 คน</option><option value="15">15 คน</option><option value="20">20 คน</option></select><small>จองได้สูงสุด 20 คนต่อรายการ</small></label>
+          <label>หมายเหตุ <span class="optional">ไม่บังคับ</span><textarea name="purpose" rows="3" maxlength="300" placeholder="เช่น มาเป็นกลุ่มนักเรียน"></textarea></label>
+          <div class="form-message" aria-live="polite"></div><button class="button button-dark auth-submit" type="submit">ยืนยันการจอง <span>→</span></button>
+        </form>
+        <div class="booking-notice"><span>✳</span><p>ต้นแบบนี้ใช้สาธิตขั้นตอนการจอง กรุณาตรวจสอบวันและเวลาเปิดให้บริการกับอุทยานก่อนเดินทางจริง</p></div>
+      </section>
+      <aside class="booking-side"><div class="booking-side-top"><span class="eyebrow">YOUR VISIT</span><h2>รายการจอง<br>ของคุณ</h2><p>หลังจองสำเร็จ หมายเลขคิวและรหัสจองจะแสดงในรายการนี้</p></div><div class="member-booking-list" id="booking-history"><div class="loading-card">กำลังโหลดรายการ…</div></div></aside>
+    </div>
+    <section class="booking-login" id="booking-login" hidden><span class="login-symbol">✳</span><span class="eyebrow">MEMBERS ONLY</span><h2>เข้าสู่ระบบก่อนจองคิว</h2><p>สมัครสมาชิกหรือเข้าสู่ระบบเพื่อบันทึกคิวไว้กับบัญชีของคุณ</p><a class="button button-dark" id="booking-login-link" href="login.html?next=booking.html">เข้าสู่ระบบ / สมัครสมาชิก <span>→</span></a></section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark">✳</span><span><strong>อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</strong><small>SIRINDHORN INTERNATIONAL ENVIRONMENTAL PARK</small></span></a><span>© <span id="year"></span> · ระบบจองคิวเข้าชม</span></div></footer>
+</body>
+</html>

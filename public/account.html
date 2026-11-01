@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#163a31">
+  <title>บัญชีของฉัน · อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</title>
+  <link rel="stylesheet" href="site.css"><link rel="stylesheet" href="account.css">
+  <script src="app.js" defer></script><script src="account.js" defer></script>
+</head>
+<body class="account-page">
+  <div class="topbar"><div class="shell topbar-inner"><span>พื้นที่สมาชิก · อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</span><span>ค่ายพระรามหก · ชะอำ · เพชรบุรี</span></div></div>
+  <header class="shell header account-header"><a class="brand" href="index.html"><span class="brand-mark">✳</span><span><strong>อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</strong><small>SIRINDHORN INTERNATIONAL ENVIRONMENTAL PARK</small></span></a><div class="account-header-actions"><a class="account-back" href="index.html">กลับหน้าเว็บไซต์ <span>↗</span></a><button class="button button-outline" id="logout-button" type="button">ออกจากระบบ</button></div></header>
+  <main class="shell member-main" id="member-main" hidden>
+    <div class="member-welcome"><div><span class="eyebrow">MEMBER AREA</span><h1>สวัสดี, <em id="member-name">สมาชิก</em></h1><p>จัดการวันเข้าชมและดูหมายเลขคิวของคุณได้จากหน้านี้</p></div><a class="button button-dark" href="booking.html">จองคิวเข้าอุทยาน <span>→</span></a></div>
+    <section class="member-profile"><div class="profile-avatar" id="profile-avatar">ส</div><div><span class="eyebrow">ข้อมูลสมาชิก</span><strong id="profile-name"></strong><span id="profile-email"></span><span id="profile-phone"></span></div><span class="member-badge">สมาชิก</span></section>
+    <section class="member-bookings"><div class="section-heading"><div><span class="eyebrow">MY VISITS</span><h2>รายการจองของฉัน</h2></div><span class="booking-count" id="booking-count">0 รายการ</span></div><div class="member-booking-list" id="member-bookings"><div class="loading-card">กำลังโหลดรายการจอง…</div></div></section>
+  </main>
+  <div class="account-loading shell" id="member-loading">กำลังตรวจสอบบัญชีของคุณ…</div>
+  <footer class="footer"><div class="shell footer-inner"><a class="brand footer-brand" href="index.html"><span class="brand-mark">✳</span><span><strong>อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</strong><small>SIRINDHORN INTERNATIONAL ENVIRONMENTAL PARK</small></span></a><span>© <span id="year"></span> · พื้นที่สมาชิก</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "sirindhorn-park-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ต้นแบบเว็บไซต์อุทยานพร้อมระบบสมาชิก จองคิว และจัดการข้อมูลผู้ดูแล",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": { "start": "node server.js" }
+}

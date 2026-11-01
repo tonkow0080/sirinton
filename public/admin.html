@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#163a31">
+  <title>ระบบผู้ดูแล · อุทยานสิ่งแวดล้อมนานาชาติสิรินธร</title>
+  <link rel="stylesheet" href="site.css"><link rel="stylesheet" href="admin.css">
+  <script src="app.js" defer></script><script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <div class="admin-app" id="admin-app" hidden>
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="index.html"><span class="brand-mark">✳</span><span><strong>สิรินธร</strong><small>PARK ADMIN</small></span></a>
+      <div class="admin-profile"><span class="admin-avatar">A</span><span><strong id="admin-name">ผู้ดูแลระบบ</strong><small>ผู้ดูแลอุทยาน</small></span></div>
+      <span class="admin-nav-label">เมนูผู้ดูแล</span>
+      <nav class="admin-nav" aria-label="เมนูผู้ดูแล">
+        <button class="is-active" type="button" data-view="dashboard"><span>◫</span> ภาพรวม</button>
+        <button type="button" data-view="locations"><span>⌖</span> จัดการสถานที่</button>
+        <button type="button" data-view="activities"><span>✳</span> กิจกรรม</button>
+        <button type="button" data-view="learning"><span>▤</span> สื่อการเรียนรู้</button>
+        <button type="button" data-view="bookings"><span>▣</span> รายการจองคิว</button>
+      </nav>
+      <div class="admin-side-bottom"><div class="admin-side-note"><span>✧</span><p>ดูแลข้อมูลให้ผู้เข้าชมวางแผนการเรียนรู้ได้ง่ายขึ้น</p></div><a href="index.html">← กลับหน้าเว็บไซต์</a><button id="admin-logout" type="button">ออกจากระบบ <span>↗</span></button></div>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-topbar"><div><span class="eyebrow">SIRINDHORN INTERNATIONAL ENVIRONMENTAL PARK</span><h1 id="view-title">ภาพรวมระบบ</h1></div><div class="admin-top-actions"><span class="admin-today" id="admin-today"></span><span class="admin-live"><i></i> ระบบพร้อมใช้งาน</span></div></header>
+      <div class="admin-content">
+        <section class="admin-panel is-visible" data-panel="dashboard">
+          <div class="admin-welcome"><div><span class="eyebrow">DASHBOARD</span><h2>สวัสดี, <em id="welcome-name">ผู้ดูแล</em></h2><p>นี่คือภาพรวมการจองและข้อมูลบนเว็บไซต์อุทยาน</p></div><button class="button button-dark" type="button" data-go-view="bookings">ดูรายการจอง <span>→</span></button></div>
+          <div class="stat-grid">
+            <article class="stat-card stat-card-green"><span class="stat-icon">⌖</span><small>สถานที่เรียนรู้</small><strong id="stat-locations">—</strong><span>รายการในระบบ</span></article>
+            <article class="stat-card stat-card-sand"><span class="stat-icon">✳</span><small>กิจกรรม</small><strong id="stat-activities">—</strong><span>รายการในระบบ</span></article>
+            <article class="stat-card stat-card-blue"><span class="stat-icon">▤</span><small>สื่อการเรียนรู้</small><strong id="stat-learning">—</strong><span>รายการในระบบ</span></article>
+            <article class="stat-card stat-card-cream"><span class="stat-icon">♙</span><small>สมาชิก</small><strong id="stat-members">—</strong><span>บัญชีผู้เข้าชม</span></article>
+          </div>
+          <section class="today-card"><div><span class="eyebrow">TODAY'S VISIT QUEUE</span><h3>คิวเข้าชมวันนี้</h3><p id="today-date">กำลังโหลดวันที่…</p></div><div class="today-total"><strong id="today-people">—</strong><span>ผู้เข้าชมจาก <b id="today-capacity">100</b> คน</span></div><div class="today-bar"><span id="today-progress"></span></div><div class="today-meta"><span><b id="today-bookings">—</b> รายการจอง</span><span id="today-remaining">เหลือ — คน</span></div></section>
+          <section class="admin-table-card"><div class="admin-section-heading"><div><span class="eyebrow">LATEST RESERVATIONS</span><h3>รายการจองล่าสุด</h3></div><button class="text-button" type="button" data-go-view="bookings">ดูทั้งหมด →</button></div><div class="table-wrap"><table><thead><tr><th>ผู้จอง</th><th>วันเข้าชม</th><th>จำนวน</th><th>คิว</th><th>สถานะ</th></tr></thead><tbody id="recent-bookings"><tr><td colspan="5" class="table-empty">กำลังโหลด…</td></tr></tbody></table></div></section>
+        </section>
+        <section class="admin-panel" data-panel="locations">
+          <div class="panel-intro"><div><span class="eyebrow">PARK LOCATIONS</span><h2>จัดการข้อมูลสถานที่</h2><p>เพิ่มหรือแก้ไขสถานที่เรียนรู้ที่ผู้เข้าชมจะเห็นบนเว็บไซต์</p></div><button class="button button-dark" type="button" data-add="location">＋ เพิ่มสถานที่</button></div>
+          <div class="admin-items-grid" id="location-list"><div class="loading-card">กำลังโหลดสถานที่…</div></div>
+        </section>
+        <section class="admin-panel" data-panel="activities">
+          <div class="panel-intro"><div><span class="eyebrow">PARK ACTIVITIES</span><h2>จัดการข้อมูลกิจกรรม</h2><p>ดูแลรายละเอียดกิจกรรม ภาพประกอบ และสถานะการเผยแพร่</p></div><button class="button button-dark" type="button" data-add="activities">＋ เพิ่มกิจกรรม</button></div>
+          <div class="admin-items-grid" id="activities-list"><div class="loading-card">กำลังโหลดกิจกรรม…</div></div>
+        </section>
+        <section class="admin-panel" data-panel="learning">
+          <div class="panel-intro"><div><span class="eyebrow">LEARNING MEDIA</span><h2>จัดการสื่อการเรียนรู้</h2><p>เพิ่มและแก้ไขแหล่งเรียนรู้ เนื้อหา และภาพประกอบ</p></div><button class="button button-dark" type="button" data-add="learning">＋ เพิ่มสื่อ</button></div>
+          <div class="admin-items-grid" id="learning-list"><div class="loading-card">กำลังโหลดสื่อการเรียนรู้…</div></div>
+        </section>
+        <section class="admin-panel" data-panel="bookings">
+          <div class="panel-intro"><div><span class="eyebrow">VISIT RESERVATIONS</span><h2>รายการจองคิวเข้าอุทยาน</h2><p>ตรวจสอบการจองและเปลี่ยนสถานะเพื่อจัดการคิวของผู้เข้าชม</p></div><button class="button button-outline" id="refresh-bookings" type="button">↻ รีเฟรชรายการ</button></div>
+          <div class="admin-filter-row"><label>ค้นหารายการ<input id="booking-search" type="search" placeholder="ชื่อ อีเมล หรือรหัสจอง"></label><label>สถานะ<select id="booking-filter"><option value="all">ทุกสถานะ</option><option value="pending">รอยืนยัน</option><option value="confirmed">ยืนยันแล้ว</option><option value="cancelled">ยกเลิกแล้ว</option></select></label></div>
+          <div class="admin-table-card"><div class="table-wrap"><table class="booking-admin-table"><thead><tr><th>ผู้จอง</th><th>วันเข้าชม</th><th>จำนวน</th><th>คิว / รหัส</th><th>สถานะ</th><th>จัดการ</th></tr></thead><tbody id="all-bookings"><tr><td colspan="6" class="table-empty">กำลังโหลด…</td></tr></tbody></table></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="admin-loading" id="admin-loading">กำลังตรวจสอบสิทธิ์ผู้ดูแล…</div>
+  <div class="admin-toast" id="admin-toast" aria-live="polite"></div>
+  <dialog class="editor-dialog" id="editor-dialog"><form id="editor-form" method="dialog"><div class="editor-header"><div><span class="eyebrow">EDIT PARK INFORMATION</span><h2 id="editor-title">เพิ่มข้อมูล</h2></div><button class="dialog-close" type="button" id="editor-close" aria-label="ปิด">×</button></div><div id="editor-fields" class="editor-fields"></div><div id="editor-message" class="form-message" aria-live="polite"></div><div class="editor-actions"><button class="button button-outline" type="button" id="editor-cancel">ยกเลิก</button><button class="button button-dark" type="submit">บันทึกข้อมูล <span>→</span></button></div></form></dialog>
+</body>
+</html>
